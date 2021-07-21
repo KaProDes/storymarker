@@ -58,5 +58,12 @@
       <% } %> 
     </div>
     <%- include('./_theme_selector.ejs') %> 
+    <script>
+        let blankLinks = document.querySelectorAll('[title="_blank"],[title="blank"]')
+        blankLinks.forEach(link => {
+            console.log(link)
+            link.setAttribute("target","_blank")
+        })
+    </script>
 </body>
 </html>
