@@ -1,0 +1,22 @@
+
+<script src="/js/easymde.min.js"></script>
+
+<div class="form-group">
+    <label for="title">Title</label>
+    <input value="<%=article.title%>" required type="text" name="title" id="title" class="form-control">
+
+    <label for="desc">Description</label>
+    <textarea required type="text" name="desc" id="desc" class="form-control"><%=article.desc%></textarea>
+
+    <label for="markdown">Markdown</label>
+    <textarea type="text" name="markdown" id="markdown" class="form-control md" rows="10"><%=article.markdown%></textarea>
+
+    
+</div>
+<br>
+<a href="/" class="btn btn-danger">Discard</a>
+<button type="submit" class="btn btn-primary">Save</button>
+<script>
+    var easyMDE = new EasyMDE({element: $('#markdown')[0]});
+</script>
+    

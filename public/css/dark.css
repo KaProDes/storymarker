@@ -1,0 +1,127 @@
+body,
+.card-body,
+.list-group-item,
+.jumbotron {
+  background-color: #0f0f0f;
+  color: aliceblue;
+  border-color: black;
+}
+
+.jumbotron {
+  background-color: #1f2f3f;
+}
+
+hr {
+  background-color: greenyellow;
+  height: 1px;
+  border: 0;
+}
+
+.article_html {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+body {
+  margin-bottom: 100px;
+}
+
+nav {
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.scale {
+  height: 1.1em;
+  width: 1.1em;
+  margin-top: -0.2em;
+}
+
+.scale_lg {
+  height: 1.5em;
+  width: 1.5em;
+  margin-top: -0.2em;
+}
+
+.article_html img,
+.article_html img:not(.big_img) {
+  padding: 8px;
+  background-color: #555;
+  max-width: min(80vw, 450px);
+}
+
+.article_html {
+  justify-content: left;
+  text-align: justify;
+}
+
+.switch_btn {
+  cursor: pointer;
+}
+
+textarea,
+input {
+  filter: invert(1);
+}
+
+textarea:focus,
+input:focus {
+  border-color: red !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(123 0 255 / 25%) !important;
+}
+
+.modal-content {
+  background-color: #1f1f1f;
+  color: azure;
+}
+
+.modal-header {
+  border-bottom: 1px solid #000;
+}
+
+.modal-footer {
+  border-top: 1px solid #000;
+}
+
+.close {
+  color: antiquewhite;
+}
+
+.close:hover {
+  color: greenyellow;
+}
+
+.editor-toolbar i {
+  color: aliceblue;
+}
+
+.editor-toolbar:active i {
+  color: black;
+}
+
+pre {
+  color: grey;
+  background-color: #1f1f1f;
+  padding: 10px;
+}
+
+[href~="green"] {
+  color: greenyellow;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+h5 img {
+  background-color: transparent !important;
+  filter: invert(1);
+}
+
+.card-header {
+  background-color: rgba(1, 1, 1, 0.9) !important;
+}

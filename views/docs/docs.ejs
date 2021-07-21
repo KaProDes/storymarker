@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="../../img/favicon_sm.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EBIA Wiki | Dell</title>
+  <%-include("../articles/_bootstrap.ejs") %> 
+  <link id="theme_sheet" rel="stylesheet" href="/css/light.css">
+</head>
+<body>
+
+    <%-include("./_navbar.ejs") %> 
+
+    <div class="container">
+        <h1 class="mb-4">Quick-start Guide : <span class="text-success">Writing an Article in Markdown</span> </h1>
+
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome!</h1>
+            <p class="lead">This is a simple Quick-start guide to help you get up and running with writing Articles using <span class="text-info">Markdown</span> Formatting.</p>
+            <hr class="my-4">
+            <p><span class="text-info">Markdown</span> is an extremely simple, elegant and Powerful way of writing and formatting Documents. <br> 
+                Read our Quick-start guide here :</p>
+                <p class="lead">
+                  <a class="btn btn-primary btn-lg" href="#markdown-quickstart-guide-abrdidged" role="button">Markdown QuickStart Guide</a>
+                </p>
+            </p>
+            <h3 class="text-danger">OR</h3>
+            <p>
+                You can find out more about Markdown : 
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Markdown">Markdown wikipedia</a> | 
+                <a target="_blank" href="https://www.markdownguide.org/">Matt Cone's Guide</a> |
+                <a href="#glossary">Other Resources</a>   
+            </p>
+        </div>
+
+        <div class="article_html">
+            <%- docBody %> 
+        </div>
+    </div>
+    <%- include('../articles/_theme_selector.ejs') %> 
+</body>
+</html>

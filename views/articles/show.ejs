@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="../../img/favicon_sm.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBIA Wiki | Dell</title>
+    <%-include("./_bootstrap.ejs") %> 
+    <link id="theme_sheet" rel="stylesheet" href="/css/light.css">
+  </head>
+<body>
+    
+    <%-include("_navbar.ejs")  %> 
+
+    <div class="container">
+      <% if(adminList.includes(user.email.toLowerCase()) || userList.includes(user.email.toLowerCase())){ %>
+        <h1 class="article_title mb-4"><%= article.title %></h1>
+        <div class="text-muted mb-2">
+            <%= article.createdAt.toLocaleDateString() %> 
+        </div>
+        <a class="btn-info btn" href="#authorList">View Authors</a>
+        <hr>
+        <a href="/" class="btn btn-success">All Articles</a>
+        <% if(adminList.includes(user.email.toLowerCase())){ %> 
+        <a href="/articles/edit/<%= article.id %>" class="btn btn-warning">Edit</a>
+        <% } %> 
+        <div class="article_html">
+            <%- article.sanitizedHtml %> 
+        </div>
+        <hr>
+
+        <h3 class="text-info">Authors : </h3>
+        
+        <% let authorList = article.authors.split("/"); authorList.pop(); %> 
+        <div class="authorList" id="authorList">
+          
+          <ul class="list-group">
+            <% authorList.forEach(function(author){ %>
+              <li class="list-group-item"> <%= author %>  </li>
+            <% }) %> 
+          </ul>
+
+          <a href="#" class="btn btn-danger">Jump to the Top</a>
+        </div>
+      <% }else{ %>
+        <div class="jumbotron">
+          <h1 class="display-4">Oh, <span class="text-danger">Snap!</span></h1>
+          <p class="lead">Looks like you do not have the necessary permissions to read the contents of this <span class="text-danger">article</span>.</p>
+          <hr class="my-4">
+          <p>You can ask for User priviledges from other admins or request
+            <a target="_blank" href="https://dell-ebia-admin.herokuapp.com/request" role="button">
+              here</a>. Please tell us the email you use to sign up. Click to make a request.</p>
+          <p class="lead">
+            <a target="_blank" class="btn btn-danger btn-lg" href="https://dell-ebia-admin.herokuapp.com/request" role="button">Request Access</a>
+          </p>
+        </div>
+      <% } %> 
+    </div>
+    <%- include('./_theme_selector.ejs') %> 
+</body>
+</html>

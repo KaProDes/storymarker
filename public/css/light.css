@@ -1,0 +1,90 @@
+body,
+.card-body {
+  background-color: #f4f4f4;
+  color: #0f0f0f;
+  border-color: black;
+}
+
+.article_html {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+body {
+  margin-bottom: 100px;
+}
+
+nav {
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.scale {
+  height: 1.1em;
+  width: 1.1em;
+  margin-top: -0.2em;
+}
+
+.scale_lg {
+  height: 1.5em;
+  width: 1.5em;
+  margin-top: -0.2em;
+}
+
+hr {
+  background-color: crimson;
+  height: 1px;
+  border: 0;
+}
+
+.article_html img {
+  padding: 8px;
+  background-color: #999;
+  max-width: min(80vw, 450px);
+}
+
+.article_html {
+  justify-content: left;
+  text-align: justify;
+}
+
+.switch_btn {
+  cursor: pointer;
+}
+
+.container {
+  width: 100vw;
+}
+
+textarea,
+input {
+  background-color: rgb(228, 250, 225) !important;
+}
+
+.jumbotron {
+  filter: brightness(0.95);
+}
+
+pre {
+  color: rgb(49, 49, 49);
+  background-color: lightgrey;
+  padding: 10px;
+}
+[href~="green"] {
+  color: rgb(7, 136, 7);
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+h5 img {
+  background-color: transparent !important;
+}
+
+.card-header {
+  background-color: rgba(200, 200, 245, 0.8) !important;
+}

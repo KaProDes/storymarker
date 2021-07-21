@@ -1,0 +1,71 @@
+.editor-preview-full img,
+.editor-preview img,
+.editor-preview-active img {
+  max-width: min(450px, 80vw) !important;
+}
+
+[title~="big_img"] {
+  min-width: 95%;
+}
+
+[title~="medium_img"] {
+  min-width: 70%;
+}
+
+.big_img {
+  min-width: 95%;
+}
+
+.med_img {
+  min-width: 50%;
+}
+
+[href~="blue"] {
+  color: darkcyan;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+[href~="yellow"] {
+  color: goldenrod;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+[href~="red"] {
+  color: crimson;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+[href~="purple"] {
+  color: rgb(175, 9, 175);
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+[href~="pink"] {
+  color: palevioletred;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+.article_html table,
+.article_html th,
+.article_html td {
+  border: 1px solid #888;
+  padding: 5px;
+}
+
+.article_html table {
+  border-collapse: collapse;
+}
+
+.card {
+  margin: 10px;
+}

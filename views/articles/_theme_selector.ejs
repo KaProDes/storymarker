@@ -1,0 +1,35 @@
+<div>
+    <script>
+        let themeCss = document.querySelector("#theme_sheet");
+        let themeCssAlt = document.querySelector("#theme_sheet_alt");
+        let switchBtn = document.querySelector(".switch_btn")
+        const setTheme = (mode)=>{
+            if(mode==="Light Mode"){
+                themeCss.href = "/css/light.css";
+                themeCssAlt.href = "/css/easymde.css";
+                document.querySelector(".switch_text").innerText = "Dark Mode" 
+            }
+            else if(mode==="Dark Mode"){
+                themeCss.href = "/css/dark.css";
+                themeCssAlt.href = "/css/easymde_dark.css";
+                document.querySelector(".switch_text").innerText = "Light Mode"
+            }
+            localStorage.setItem('theme',mode);
+        }
+        let theme = localStorage.getItem("theme");
+        if(theme == null){
+            setTheme("Light Mode")
+        }
+        else{
+            setTheme(theme);
+        }
+        document.querySelector(".switch_btn").addEventListener("click",(e)=>{
+            if(localStorage.getItem("theme")=="Light Mode"){
+                setTheme("Dark Mode")
+            }
+            else{
+                setTheme("Light Mode")
+            }
+        })
+    </script>
+</div>

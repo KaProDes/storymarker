@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBIA Wiki | Dell</title>
+    <%-include("./_bootstrap.ejs") %> 
+    <link id="theme_sheet" rel="stylesheet" href="/css/light.css">
+</head>
+<body>
+    <%-include("_navbarSearch.ejs",{user : user})  %> 
+
+    <% let i = 0 %> 
+    <div class="container">
+        <h1 class="mb-4">KwayTree's Blog</h1>
+        <% if(adminList.includes(user.email.toLowerCase())){ %>
+                <a href="/articles/new" class="btn btn-success">New Article</a>
+                <a href="/docs" class="btn btn-info">Writing Guide</a>
+        <%  }%>
+        <hr>
+        <% let anchorArticles = metadataManager.markdown.split(", ") %> 
+        <h2 class="text-success">Featured Threads :</h2>
+        <br>
+        <% if(adminList.includes(user.email.toLowerCase()) ||  userList.includes(user.email.toLowerCase())){ %>
+            <% articles.forEach(article => { %>
+                    <% if(anchorArticles.includes(article.slug)){ %>
+                        <div class="card">
+                            <div class="card-header">
+                              Featured
+                            </div>
+                            <div class="card-body">
+                              <h4 class="card-title"><%=article.title%></h4>
+                              <p class="card-text"><%=article.desc%></p>
+                              <a href="./articles/<%= article.slug %>" class="btn btn-primary">View Thread</a>
+                            </div>
+                          </div>
+                    <% } %> 
+            <% }) %> 
+            <hr>
+            <h2 class="text-success">All Articles :</h2>
+
+            <% articles.forEach(article => { %>
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h4 class="card-title"><%= article.title %></h4>
+                        <div class="card-subtitle text-muted mb-2">
+                            <%= article.createdAt.toLocaleDateString() %> | 
+                            <%= article.createdAt.toLocaleTimeString('en-US') %>
+                        </div>
+                        <% i++ %> 
+                        <div class="card-text mb-2">
+                            <%= article.desc %> 
+                        </div>
+                        <a class="btn btn-primary" href="./articles/<%= article.slug %>">Read More</a>
+                        <% if(adminList.includes(user.email.toLowerCase())){ %>
+                            <a class="btn btn-warning" href="./articles/edit/<%= article.id %>">Edit</a>
+                            <% if(article.slug==="metadata-manager"){ %>
+                                
+                            <% }else{ %>
+                                <form class="d-inline" action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#<%=i%>">
+                                        Delete
+                                    </button>
+                                    <%-include("./_deleteModal.ejs",{ i : i }) %> 
+                                </form>
+                            <% } %> 
+                        <%  }%>
+                    </div>
+                </div>
+            <% }) %>
+        <%  } else{%>
+            <div class="jumbotron">
+                <h1 class="display-4">Uh, <span class="text-danger">Oh!</span></h1>
+                <p class="lead">Looks like you do not have the necessary permissions to read the contents of this website.</p>
+                <hr class="my-4">
+                <p>You can ask for User priviledges from other admins or request
+                    <a target="_blank" href="https://dell-ebia-admin.herokuapp.com/request" role="button">
+                      here</a>. Please tell us the email you use to sign up. Click to make a request.</p>
+                  <p class="lead">
+                    <a target="_blank" class="btn btn-danger btn-lg" href="https://dell-ebia-admin.herokuapp.com/request" role="button">Request Access</a>
+                  </p>
+            </div>
+        <% } %> 
+    </div>
+    <%- include('./_theme_selector.ejs') %> 
+</body>
+</html>

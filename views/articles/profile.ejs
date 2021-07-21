@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="../../img/favicon_sm.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EBIA Wiki | Dell</title>
+  <%-include("./_bootstrap.ejs") %> 
+  <link id="theme_sheet" rel="stylesheet" href="/css/light.css">
+</head>
+<body>
+
+    <%-include("_navbar.ejs") %> 
+
+    <div class="container">
+        <h1 class="mb-4">User Profile</h1>
+
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="text-center card-header">
+                  <% if(typeof (user.given_name) !== "undefined"){ %>
+                    <%= user.given_name +" "+ user.family_name %>
+                  <% } else{ %>
+                    <%= user.nickname %>
+                  <% } %>
+
+                  <%if(isAdmin){%>
+                    <img src="/img/Verified_Badge.png" class="scale">
+                  <%}%>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;" class="card-body">
+                  <p class="card-title"><%= user.email.toLowerCase() %></p>
+                  <% if(isAdmin){ %>
+                    <p class="text-info">Admin</p>
+                  <% } else if(isUser){ %>
+                    <p class="text-warning">User</p>
+                  <% }else{ %>
+                    <p class="text-danger">Outsider</p>
+                  <% } %>
+                  <img style="height: 20vh; width: 20vh;" class="rounded-circle z-depth-2" alt="100x100" src=<%= user.picture%>
+                  data-holder-rendered="true">
+                  <p class="card-text"><%= user.nickname %></p>
+                </div>
+            </div>
+
+            <!-- Jumbotron start -->
+
+            <% if(isAdmin){ %> 
+              <div class="jumbotron">
+                <h1 class="display-4">Hello, <span class="text-info">Admin</span>!</h1>
+                <p class="lead">As an admin, you will be able to add, delete, modify content on this website.</p>
+                <hr class="my-4">
+                <p>You can also add other admins and users using the 
+                  <a target="_blank" href="https://dell-ebia-admin.herokuapp.com/" role="button">
+                    Role Management App</a>. Click to get started.</p>
+                <p class="lead">
+                  <a target="_blank" class="btn btn-primary btn-lg" href="https://dell-ebia-admin.herokuapp.com/" role="button">Role Manager</a>
+                </p>
+              </div>
+            <% }else if(isUser){ %> 
+              <div class="jumbotron">
+                <h1 class="display-4">Hello, <span class="text-warning">User</span>!</h1>
+                <p class="lead">As a user, you will be able to read the contents of this website.</p>
+                <hr class="my-4">
+                <p>You can ask for Admin priviledges from other admins or request
+                  <a target="_blank" href="https://dell-ebia-admin.herokuapp.com/request" role="button">
+                    here</a>. Please tell us the email you use to sign up. Click to make a request.</p>
+                <p class="lead">
+                  <a target="_blank" class="btn btn-warning btn-lg" href="https://dell-ebia-admin.herokuapp.com/request" role="button">Request Access</a>
+                </p>
+              </div>
+            <% }else{ %> 
+              <div class="jumbotron">
+                <h1 class="display-4">Hello, <span class="text-danger">Outsider</span>!</h1>
+                <p class="lead">As an outsider, you will not be able to read the contents of this website.</p>
+                <hr class="my-4">
+                <p>You can ask for User priviledges from other admins or request
+                  <a target="_blank" href="https://dell-ebia-admin.herokuapp.com/request" role="button">
+                    here</a>. Please tell us the email you use to sign up. Click to make a request.</p>
+                <p class="lead">
+                  <a target="_blank" class="btn btn-danger btn-lg" href="https://dell-ebia-admin.herokuapp.com/request" role="button">Request Access</a>
+                </p>
+              </div>
+            <% } %> 
+    </div>
+    <%- include('./_theme_selector.ejs') %> 
+</body>
+</html>
