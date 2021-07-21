@@ -61,12 +61,14 @@ app.get("/", async (req, res) => {
       createdAt: "desc",
     });
     const metadataManager = await Article.findOne({slug : 'metadata-manager'});
+    const hiddenManager = await Article.findOne({slug : 'hidden-manager'});
     res.render("articles/index.ejs", {
       articles: articles,
       user: req.oidc.user,
       adminList: adminList,
       userList : userList,
-      metadataManager : metadataManager
+      metadataManager : metadataManager,
+      hiddenManager : hiddenManager
     });
   } else {
     res.redirect("/login");

@@ -12,9 +12,9 @@
 <body>
     
     <%-include("_navbar.ejs")  %> 
-
+    <% let publicArticles = publicManager.markdown.split(", ") %>
     <div class="container">
-      <% if(adminList.includes(user.email.toLowerCase()) || userList.includes(user.email.toLowerCase())){ %>
+      <% if(adminList.includes(user.email.toLowerCase()) || userList.includes(user.email.toLowerCase()) || publicArticles.includes(article.slug)){ %>
         <h1 class="article_title mb-4"><%= article.title %></h1>
         <div class="text-muted mb-2">
             <%= article.createdAt.toLocaleDateString() %> 

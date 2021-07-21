@@ -66,7 +66,8 @@ router.get("/:slug",requiresAuth(),async (req,res)=>{
       }
     })
     .filter((notUndefined) => notUndefined !== undefined);
-    res.render("articles/show",{article : article, user : req.oidc.user, adminList : adminList, userList : userList})
+    const publicManager = await Article.findOne({slug : 'public-manager'});
+    res.render("articles/show",{article : article, user : req.oidc.user, adminList : adminList, userList : userList, publicManager : publicManager})
 })
 
 //Post Route to submit i.e POST the Article @articles

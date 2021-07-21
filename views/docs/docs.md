@@ -1,4 +1,10 @@
-﻿![Opening Gif](./img/doc_img/PresGifOne.gif "medium_img")
+﻿[Note](red) : For MetaData Management to Pin Articles : [/articles/metadata-manager](/articles/metadata-manager)
+
+[Note](blue) : For Public Articles : [/articles/public-manager](/articles/public-manager)
+
+[Note](green) : For Hidden Articles : [/articles/hidden-manager](/articles/hidden-manager)
+
+![Opening Gif](./img/doc_img/PresGifOne.gif "medium_img")
 
 <hr>
 <hr>

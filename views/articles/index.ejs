@@ -20,6 +20,7 @@
         <%  }%>
         <hr>
         <% let anchorArticles = metadataManager.markdown.split(", ") %> 
+        <% let hiddenArticles = hiddenManager.markdown.split(", ") %> 
         <h2 class="text-success">Featured Threads :</h2>
         <br>
         <% if(adminList.includes(user.email.toLowerCase()) ||  userList.includes(user.email.toLowerCase())){ %>
@@ -41,6 +42,9 @@
             <h2 class="text-success">All Articles :</h2>
 
             <% articles.forEach(article => { %>
+                <% if(hiddenArticles.includes(article.slug)){ %>
+
+                <% }else{ %>
                 <div class="card mt-4">
                     <div class="card-body">
                         <h4 class="card-title"><%= article.title %></h4>
@@ -55,19 +59,16 @@
                         <a class="btn btn-primary" href="./articles/<%= article.slug %>">Read More</a>
                         <% if(adminList.includes(user.email.toLowerCase())){ %>
                             <a class="btn btn-warning" href="./articles/edit/<%= article.id %>">Edit</a>
-                            <% if(article.slug==="metadata-manager"){ %>
-                                
-                            <% }else{ %>
                                 <form class="d-inline" action="/articles/<%= article.id %>?_method=DELETE" method="POST">
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#<%=i%>">
                                         Delete
                                     </button>
                                     <%-include("./_deleteModal.ejs",{ i : i }) %> 
                                 </form>
-                            <% } %> 
                         <%  }%>
                     </div>
                 </div>
+                <% } %> 
             <% }) %>
         <%  } else{%>
             <div class="jumbotron">
