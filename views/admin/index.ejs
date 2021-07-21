@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%-include("./_bootstrap.ejs") %> 
+    <title>Role Manager</title>
+</head>
+<body>
+    <%-include("./_navbar.ejs") %> 
+
+    <div class="container">
+        <h1>User Management Dashboard : Home</h1>
+        <div class="alert_div"></div>
+        <h3>Logged in as : <span class="text-success"><%=user.email%></span></h3>
+        <div id="warning_modal" class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Danger!</h4>
+            <p>You are about to edit the list of Admins and Users for <a style="color: red !important;" target="_blank" href="../">This App</a> </p>
+            <hr>
+            <p class="mb-0">You are most probably not meant to see this Page.</p>
+            <button id="close_btn_ok" class="btn btn-secondary">I Understand</button>
+            <a href="javascript:window.open('','_self').close();" class="btn btn-warning close_btn_exit">Close this Dashboard</a>
+        </div>
+
+        <% if(adminList.includes(user.email)){ %>
+            <a href="./add" class="btn btn-info">
+                Add User
+            </a>
+            <a href="./users" class="btn btn-secondary">
+                Raw Users
+            </a>
+            <a href="./request" class="btn btn-success">
+                View Requests
+            </a>
+            <%-include("./_userList.ejs") %> 
+        <% }else{ %>
+            <a href="./request" class="btn btn-success">
+                Request Access
+            </a>
+            <div class="jumbotron bg-info">
+                <h1 class="display-4">Welcome, <span class="text-danger"> 
+                    <% if(user.given_name !== undefined){ %>
+                        <%=user.given_name %> 
+                    <% }else{ %> 
+                        <%=user.nickname  %> 
+                    <% } %> 
+                </span>!</h1>
+                <p class="lead">You are restricted from Modifying users.</p>
+                <img style="height : 30vh" src="/admin/img/blocked.png" alt="">
+                <hr class="my-4">
+                <p>You can ask for Administrative priviledges from other admins or mail to
+                  <a class="text-success" target="_blank" href="mailto:deshmukhkapil4@gmail.com" role="button">
+                    deshmukhkapil4@gmail.com</a> OR You can click to Make a Request.</p>
+                <p class="lead">
+                  <a  class="btn btn-primary" href="./request" role="button">Make a Request</a>
+                </p>
+                
+            </div>
+        <% } %> 
+    </div>
+    <script>
+        document.querySelectorAll(".close_btn_exit").forEach(closeBtn =>{
+            closeBtn.addEventListener("click",()=>{
+            window.top.close();
+            document.querySelector(".alert_div").innerHTML = 
+            `<div class="text-dark alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Close this Tab</strong> or <strong>Press Ctrl + W </strong>to close this tab
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>`    
+        })
+        })
+
+        document.querySelector("#close_btn_ok").addEventListener("click",()=>{
+            document.querySelector("#warning_modal").remove()
+        })
+    </script>
+</body>
+</html>

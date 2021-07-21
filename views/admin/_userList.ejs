@@ -1,0 +1,37 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <% let i = 1 %> 
+    <% const exemptList = ['deshmukhkapil22@gmail.com', 'chefwithguns@gmail.com'] %> 
+    <% users.forEach(function(user){ %>
+        <tbody>
+            <tr>
+                <th scope="row"><%=(i)%> </th>
+                <td><%=user.email %> </td>
+                <td><%=user.role %> </td>
+                <td>
+                    <% if(exemptList.includes(user.email)){ %>
+                        <button type="button" class="btn btn-info">
+                            Creator
+                        </button>
+                    <% }else{ %>
+                        <form action="./<%= user.id %>?_method=DELETE" method="POST">
+                            <!-- <button type="submit" class="btn btn-danger">delete</button> -->
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#<%=i%>">
+                                Delete
+                            </button>
+                            <%-include('./_deleteModal.ejs',{ i : i}) %> 
+                        </form>
+                    <% } %> 
+                </td>
+            </tr>
+        </tbody>
+        <% i++ %> 
+    <% }) %>  
+</table>

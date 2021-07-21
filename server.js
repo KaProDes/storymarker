@@ -5,6 +5,7 @@ const Article = require("./models/article");
 const User = require("./models/user");
 const marked = require('marked')
 const articlesRouter = require("./routes/articles.js");
+const adminRouter = require("./routes/admin.js");
 const methodOverride = require("method-override");
 const app = express();
 require("dotenv").config();
@@ -37,6 +38,7 @@ app.use(methodOverride("_method"));
 
 // all /articles routes will be handled by articlesRouter module from /routes/articles.js
 app.use("/articles", articlesRouter);
+app.use("/admin", adminRouter);
 
 app.get("/", async (req, res) => {
   let users = await User.find();

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%-include("./_bootstrap.ejs") %> 
+    <title>Role Manager</title>
+</head>
+<body>
+    <%-include("./_navbar.ejs") %> 
+    <div class="container">
+        <h1>User Management Dashboard : Add a User Role</h1>
+        
+        <div class="alert_div"></div>
+        <h3>Logged in as : <span class="text-success"><%=user.email%></span></h3>
+        <div id="warning_modal" class="alert alert-info" role="alert">
+            <h4 class="alert-heading">Warning!</h4>
+            <p>You are about to add to the list of Admins and Users for <a style="color: red !important;" target="_blank" href="../">This App</a> </p>
+            <hr>
+            <p class="mb-0">Please make sure not to avoid unnecessary space while typing email and role.</p>
+            <button id="close_btn_ok" class="btn btn-info">I Understand</button>
+            <a href="javascript:window.open('','_self').close();" class="btn btn-warning close_btn_exit">Close this Dashboard</a>
+        </div>
+        <form action="./" method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input placeholder="johndoe@dell.com" required type="text" name="email" id="email" class="form-control">
+        
+                <!-- <label for="role">Role</label>
+                <input placeholder="user" required type="text" name="role" id="role" class="form-control"> -->
+
+                <br>
+                <label for="role">Role : </label>
+                <br>
+                <div class="form-check form-check-inline">
+                    <input checked class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="user">
+                    <label class="form-check-label" for="inlineRadio1">user</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="admin">
+                    <label class="form-check-label" for="inlineRadio2">admin</label>
+                </div>
+            </div>
+            <br>
+            <a href="./" class="btn btn-danger">Discard</a>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+    <script>
+        document.querySelector(".close_btn_exit").addEventListener("click",()=>{
+            window.top.close();
+            document.querySelector(".alert_div").innerHTML = 
+            `<div class="text-dark alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Close this Tab</strong> or <strong>Press Ctrl + W </strong>to close this tab
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>`    
+        })
+        document.querySelector("#close_btn_ok").addEventListener("click",()=>{
+            document.querySelector("#warning_modal").remove()
+        })
+    </script>
+</body>
+</html>

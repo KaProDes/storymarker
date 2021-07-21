@@ -1,0 +1,40 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Grant</th>
+        </tr>
+    </thead>
+    <% let i = 1 %> 
+    <% users.forEach(function(user){ %>
+        <tbody>
+            <tr>
+                <th scope="row"><%=(i)%> </th>
+                <td><%=user.email %> </td>
+                <td><%=user.role %> </td>
+                <td>
+                <form action="./request/<%= user.id %>?_method=DELETE" method="POST">
+                    <!-- <button type="submit" class="btn btn-danger">delete</button> -->
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#<%=i%>">
+                        Delete
+                    </button>
+                    <%-include('./_deleteModal.ejs',{ i : i}) %> 
+                </form>
+                </td>
+                <td>
+                <form action="./add/<%=user.email%>/<%=user.role%>/<%=user.id%>" method="POST">
+                    <!-- <button type="submit" class="btn btn-danger">delete</button> -->
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#num+<%=i%>">
+                        Grant
+                    </button>
+                    <%-include('./_grantModal.ejs',{ i : i}) %> 
+                </form>
+                </td>
+            </tr>
+        </tbody>
+        <% i++ %> 
+    <% }) %>  
+</table>

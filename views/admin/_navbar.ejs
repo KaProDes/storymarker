@@ -1,0 +1,42 @@
+<nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+        <img class="scale" src="/img/favicon_sm.ico"> Role Management</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="./profile"> <img src=<%= user.picture %> class="rounded-circle scale">
+              <% if(typeof (user.given_name) !== "undefined"){ %>
+                  <%= user.given_name +" "+ user.family_name %>
+              <% } else{ %>
+                  <%= user.nickname %>
+              <% } %>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="./">Home </a>
+        </li>
+        <li class="nav-item active">
+          <a target="_blank" class="nav-link text-success" href="../">Wiki </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link text-primary" href="./add">Add User </a>
+        </li>
+        <li class="nav-item active">
+          <a href="javascript:window.open('','_self').close();" class="nav-link exit-link text-warning close_btn_exit">Exit</a>
+        </li>
+        <li class="nav-item active">
+          <a href="../logout" class="nav-link exit-link text-danger">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+      document.querySelector(".exit-link").addEventListener("click",()=>{
+          
+        window.top.close();
+      })
+  </script>

@@ -1,0 +1,54 @@
+.navbar-nav {
+  margin-left: auto;
+}
+
+.scale {
+  height: 1.5em;
+  width: 1.5em;
+  margin-top: -0.2em;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.modal-content {
+  background-color: #525f7f;
+  color: azure;
+}
+
+.modal-content .modal-header .modal-title {
+  color: #f4f4f4;
+}
+
+label {
+  color: #f4f4f4;
+}
+
+.preloader {
+  align-items: center;
+  background: rgb(23, 22, 22);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.3s linear;
+  width: 100%;
+  z-index: 9999;
+}
+
+.jumbotron {
+  filter: brightness(0.8);
+}
+
+.jumbotron *,
+.warning_modal * {
+  font-weight: 500;
+  color: white;
+}
+
+.exit-link {
+  cursor: pointer;
+}
