@@ -55,6 +55,20 @@
   text-decoration: none;
 }
 
+[href~="orange"] {
+  color: #e33e02;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+[href~="db"] {
+  color: #007bff;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
 .article_html table,
 .article_html th,
 .article_html td {
