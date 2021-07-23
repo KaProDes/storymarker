@@ -86,5 +86,7 @@
 
 iframe {
   /* width: 500px; adjust to your needs */
+  min-width: 100px;
+  min-height: 100px;
   max-width: 95% !important; /* to make it responsive */
 }
