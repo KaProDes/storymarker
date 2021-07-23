@@ -6,6 +6,8 @@ const {JSDOM} = require('jsdom')
 const { sanitize } = require('dompurify')
 const dompurify = createDomPurify (new JSDOM().window)
 
+
+
 const articleSchema = new mongoose.Schema({
     title : {
         type : String,
@@ -48,7 +50,8 @@ articleSchema.pre('validate',function(next){
     }
 
     if(this.markdown){
-        this.sanitizedHtml = dompurify.sanitize(marked(this.markdown))
+        this.sanitizedHtml = dompurify.sanitize(marked(this.markdown),
+        { ADD_TAGS: ["iframe"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling'] })
     }
 
     next()
