@@ -13,10 +13,11 @@
 
     <%-include("_navbar.ejs") %> 
 
-    <div class="container">
+    <div class="container text-center">
         <h1 class="mb-4">User Profile</h1>
 
-            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="container d-flex justify-content-center">
+              <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
                 <div class="text-center card-header">
                   <% if(typeof (user.given_name) !== "undefined"){ %>
                     <%= user.given_name +" "+ user.family_name %>
@@ -41,6 +42,7 @@
                   data-holder-rendered="true">
                   <p class="card-text"><%= user.nickname %></p>
                 </div>
+            </div>
             </div>
 
             <!-- Jumbotron start -->

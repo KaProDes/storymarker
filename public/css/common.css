@@ -83,3 +83,8 @@
 .card {
   margin: 10px;
 }
+
+iframe {
+  /* width: 500px; adjust to your needs */
+  max-width: 95% !important; /* to make it responsive */
+}
