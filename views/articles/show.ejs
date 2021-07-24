@@ -19,12 +19,15 @@
         <div class="text-muted mb-2">
             <%= article.createdAt.toLocaleDateString() %> 
         </div>
-        <a class="btn-info btn" href="#authorList">View Authors</a>
-        <hr>
+        
+        
         <a href="/" class="btn btn-success">All Articles</a>
         <% if(adminList.includes(user.email.toLowerCase())){ %> 
         <a href="/articles/edit/<%= article.id %>" class="btn btn-warning">Edit</a>
         <% } %> 
+        <a class="btn-info btn" href="#authorList">View Authors</a>
+        <hr>
+        
         <div class="article_html">
             <%- article.sanitizedHtml %> 
         </div>
@@ -40,8 +43,14 @@
               <li class="list-group-item"> <%= author %>  </li>
             <% }) %> 
           </ul>
-
-          <a href="#" class="btn btn-danger">Jump to the Top</a>
+          <br>
+          <div class="container text-center">
+            <a href="/" class="btn btn-success">All Articles</a>
+            <% if(adminList.includes(user.email.toLowerCase())){ %> 
+            <a href="/articles/edit/<%= article.id %>" class="btn btn-warning">Edit</a>
+            <% } %> 
+            <a href="#" class="btn btn-pink">Jump to the Top</a>
+          </div>
         </div>
       <% }else{ %>
         <div class="jumbotron">
