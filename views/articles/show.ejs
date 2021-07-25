@@ -11,7 +11,7 @@
   </head>
 <body>
     
-    <%-include("_navbar.ejs")  %> 
+    <%-include("_navbar.ejs",{navType : "non-sticky"})  %> 
     <% let publicArticles = publicManager.markdown.split(", ") %>
     <div class="container">
       <% if(adminList.includes(user.email.toLowerCase()) || userList.includes(user.email.toLowerCase()) || publicArticles.includes(article.slug)){ %>
