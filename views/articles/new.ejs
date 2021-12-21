@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> KwayTree / Blog</title>
+    <title> StoryMarker | New </title>
     <%-include("./_bootstrap.ejs") %> 
     <link id="theme_sheet" rel="stylesheet" href="/css/light.css">
   </head>
@@ -13,7 +13,7 @@
     <%-include("_navbar.ejs",{user : user, navType : "sticky"})  %> 
 
     <div class="container">
-        <h1 class="mb-4">New Article</h1>
+        <h1 class="mb-4">New Story</h1>
         <form action="/articles" method="POST">
             <%- include('_form_fields.ejs') %>
         </form>

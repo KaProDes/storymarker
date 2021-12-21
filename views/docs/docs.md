@@ -4,7 +4,7 @@
 
 [Note](green) : For Hidden Articles : [/articles/hidden-manager](/articles/hidden-manager)
 
-![Opening Gif](./img/doc_img/PresGifOne.gif "medium_img")
+![Opening Gif](./img/editor.gif "medium_img")
 
 <hr>
 <hr>
@@ -21,7 +21,7 @@
 6. <a href="#links">Links</a>
 7. <a href="#images">Images</a>
 
-- <a href="#glossary">Additional Markdown Glossary</a>
+-   <a href="#glossary">Additional Markdown Glossary</a>
 
 <hr>
 <hr>
@@ -195,11 +195,11 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 2. Another item
 3. And another item.
 
-- Unordered list can use asterisks
+-   Unordered list can use asterisks
 
-* Or minuses
+*   Or minuses
 
-- Or pluses
+-   Or pluses
 
 <hr>
 <hr>
@@ -280,7 +280,7 @@ While writing an article, you always access [Markdown Basic Syntax Guide]() by c
 
 #### [Additional References](purple)
 
-- ##### [![logo](/img/doc_img/link.svg) Phenomenal Cheat-Sheet on Github by AdamP](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-- ##### [![logo](/img/doc_img/link.svg) Markdown Guide by Matt Cone](https://www.markdownguide.org/)
-- ##### [![logo](/img/doc_img/link.svg) Markdown's Original Website](https://daringfireball.net/projects/markdown/)
-- ##### [![logo](/img/doc_img/link.svg) Wikipedia : Markdown](https://en.wikipedia.org/wiki/Markdown)
+-   ##### [![logo](/img/doc_img/link.svg) Phenomenal Cheat-Sheet on Github by AdamP](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+-   ##### [![logo](/img/doc_img/link.svg) Markdown Guide by Matt Cone](https://www.markdownguide.org/)
+-   ##### [![logo](/img/doc_img/link.svg) Markdown's Original Website](https://daringfireball.net/projects/markdown/)
+-   ##### [![logo](/img/doc_img/link.svg) Wikipedia : Markdown](https://en.wikipedia.org/wiki/Markdown)

@@ -1,0 +1,25 @@
+:root {
+  --mainText: #4a4a4a;
+  --secText: #303030;
+  --mainColor: #c884a6;
+  --secColor: #e7bbe3;
+  --borderColor: #ccd5ff;
+
+  --themeBorder: #7cc6fe;
+  --bgColor: rgba(26, 23, 24, 0.8);
+  --fgShadow: #5dade2;
+  --buttonColor: #3498db;
+}
+
+.skills ul li {
+  color: #005d77;
+}
+.bg p,
+.bg h3,
+#submitBtn {
+  color: #fff;
+}
+
+.navigate li a {
+  color: var(--mainText);
+}

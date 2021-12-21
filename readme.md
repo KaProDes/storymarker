@@ -1,306 +1,178 @@
-# <font color="darkcyan">Dell EBIA Wiki</font>
+<div id="top"></div>
 
-## <font color="#32cd32">Project Details</font>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/KaProDes/storymarker/about">
+    <img src="./public/img/favicon.ico" alt="Logo" width="80" height="80">
+  </a>
+  <h3 align="center">StoryMarker</h3>
 
-- Author : Kapil P Deshmukh
+  <p align="center">
+    Made for small teams to internally share designs, mockups and code.
+    <br />
+    <a href="https://github.com/KaProDes/storymarker/tree/master/source"><strong>Jump to Project Source »</strong></a>
+    <br />
+    <br />
+    <a href="https://storymarker.herokuapp.com/about">View Demo</a>
+    ·
+    <a href="https://github.com/KaProDes/storymarker/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/KaProDes/storymarker/issues">Request Feature</a>
+  </p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+
+<summary>Table of Contents</summary>
+<ol>
+  <li>
+    <a href="#about-the-project">About The Project</a>
+    <ul>
+      <li><a href="#built-with">Built With</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#getting-started">Getting Started</a>
+    <ul>
+      <li><a href="#prerequisites">Prerequisites</a></li>
+      <li><a href="#installation">Installation</a></li>
+    </ul>
+  </li>
+  <li><a href="#contributing">Contributing</a></li>
+  <li><a href="#license">License</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#acknowledgments">Acknowledgments</a></li>
+</ol>
+
+<!-- ABOUT THE PROJECT -->
 
-- Mentor : Sujith Ravindran
+## About The Project
 
-- For : Summer Internship @ Dell, Bengaluru
+![StoryMarker Action](./public/img/story.gif)
 
-- Start Date : 7th June 2021
+While working on an App Idea with a small-medium team, it often gets tedious to haul code snippets around, write todos for features, distribute mockups and track progress of the UI/UX development. StoryMarker allows you to do all of the above, so that you can work on the next big thing without losing track of _that_ Figma Design that Eve shared with you last Thursday!
 
-- Last Update : 15th July 2021
+Features of StoryMarker:
 
-- Main Website URL : [ebia-wiki-dell.herokuapp.com](https://ebia-wiki-dell.herokuapp.com)
+-   Rich Text Editor with Markdown support so that you can write Stories with maximum control.
+-   auth0 Authentication with customizable Role control \(Admin/User/Others\)
+-   Created by Software Engineers like you. We have painstakingly created a beautiful seamless, familiar-feeling experience using Bootstrap 5 that doesn't get in the way <a href="https://clutch.co/web-designers/resources/why-bootstrap-is-ideal-design-framework">Know More »</a>
 
-- Admin Dashboard URL : [dell-ebia-admin.herokuapp.com](https://dell-ebia-admin.herokuapp.com)
+Building a collaboration software is a continuous process and requires iterative improvements and matures over time. We will be updating the features on the backend per the issues/user feedback and we aim to make StoryMarker an essential tool in a small Team's arsenal
 
-- Application Logo : Represents reflection, integrity and nature.
+Authorization Features :
 
-## <font color="red">Abstract</font>
+![StoryMarker Home](./public/img/users.gif)
 
-The project titled <font color="#32cd32">“Dell EBIA Wiki”</font> was designed to create, document and store articles in order to consolidate the knowledge of the department. By having a unified environment to share information, it would be of great help for the new members as well as seasoned veterans here at Dell EBIA. The goal is to have a web based application where the pros who have gathered deep insight about the ins-and-outs of the day-to-day work culture, protocols, terminologies and products - can share all of this valuable knowledge with the rookies who are getting started, or anyone looking to enhance their cross functional knowledge.
+Visit <a href="https://storymarker.herokuapp.com/about">StoryMarker</a> to check it out now!
 
-<font color="darkcyan">Administrators</font>, who have complete access to create, edit, delete articles can go about doing so according to their own discretion and the time of creation will be time stamped once the article has been issued.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-<font color="goldenrod">Users</font>, who are authorized personnel within Dell, can view the articles and get shareable links that can be forwarded to other users/admins.
+### Built With
 
-<font color="crimson">Outsiders</font>, unknown or anonymous entities that have not been authorized by the admins cannot view any article, making this internal documentation classified and viewable only by the employees under Dell.
+This project is made with :
 
-Each feature within the Application(s) has been designed with maximum security and safety in mind, so as to deter any sorts of unauthorized sharing of articles and the information contained within them.
+-   [Bootstrap 5](https://getbootstrap.com)
+-   [Node JS](https://nodejs.org/)
+-   [Express JS](https://expressjs.com/)
+-   [Marked](https://www.npmjs.com/package/marked)
+-   [Mongo DB](https://www.mongodb.com/)
+-   [ejs](https://ejs.co/)
+-   [auth0](https://auth0.com/)
 
-<!-- This readme highlights some of the major features of the project and aims to inform the users about how to go about interacting with the Web App i.e. the Authorization, Role Management Systems, Content Management Systems, etc. At the end of this document, some additional technical specifications and specifics can be found pertaining to the Dell EBIA Wiki and its sister app Dell EBIA Admin (Role Management) -->
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-# Quickstart Guide
+<!-- GETTING STARTED -->
 
-## [Click here for the Main Article on the Website](https://ebia-wiki-dell.herokuapp.com/docs)
+## Getting Started
 
-![Opening Gif](public/img/doc_img/PresGifOne.gif "medium_img")
+Before you start working on this project/fork it, it is highly recommended that you check out how the models and the backend works here : [Source](https://github.com/KaProDes/storymarker)
 
-<hr>
-<hr>
+We can clone the entire project
+To get a local copy up and running follow these simple example steps.
 
-## [Markdown Quickstart Guide (Abrdidged)](yellow)
+### Prerequisites
 
-### [_Table of Contents_](red)
+This is an example of how to list things you need to use the software and how to install them.
 
-1. <a href="#heading">Heading</a>
-2. <a href="#normal-text">Normal Text</a>
-3. <a href="#colored-text">Colored Text</a>
-4. <a href="#bold-italics-and-other-emphasis">Bold, Italics and Other Emphasis</a>
-5. <a href="#lists">Lists</a>
-6. <a href="#links">Links</a>
-7. <a href="#images">Images</a>
+-   NodeJS version 14 or greater
+    ```sh
+    node -v
+    ```
 
-- <a href="#glossary">Additional Markdown Glossary</a>
+### Installation
 
-<hr>
-<hr>
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-[Note Before](red) : This guide is shortened in the interest of ease of use.
+1. Clone the repo
+    ```sh
+    git clone https://github.com/KaProDes/storymarker.git
+    ```
+2. Install all necessary node modules
+    ```sh
+    npm install
+    ```
+3. Create a .env file and add the following
+   Do note that you will require your own [MongoDB Instance](https://youtu.be/bxsemcrY4gQ) and [auth0](https://youtu.be/QQwo4E_B0y8) server
+    ```.env
+    ISSUER_BASE_URL=https://johndoe.us.auth0.com
+    CLIENT_ID=FmS123459y0HXpa234xlDZIVElgraY65
+    BASE_URL=http://localhost:3000
+    SECRET=NbAtMbK2fCkgQ1otjStjClwev2oDnVPTQtomhollandbp37STlIzHFo3Zz3A8CB
+    URI=mongodb+srv://johndoe:<password>@cluster0.ifsn5.mongodb.net/Stories?retryWrites=true&w=majority
+    ```
+4. Launch the Project on default port 3000
+    ```sh
+    npm run dev
+    ```
 
-If you wish to view the full, comprehensive Guide to Markdown Formatting, click here :
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-<a href="https://www.markdownguide.org/basic-syntax/" target="_blank" class="btn btn-info">Full Markdown Guide</a>
+<!-- CONTRIBUTING -->
 
-<hr>
-<hr>
+## Contributing
 
-## [Heading](#heading)
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Adding Headings to your markdown article is very straightforward. <br>
-We have in all 6 types of headings at our disposal :
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-| [Heading type](blue) | [Prefix](yellow) |
-| -------------------- | ---------------- |
-| h1                   | #                |
-| h2                   | ##               |
-| h3                   | ###              |
-| h4                   | ####             |
-| h5                   | #####            |
-| h6                   | ######           |
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-<hr>
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### [Examples](red)
+<!-- LICENSE -->
 
-```
-# Heading1
-```
+## License
 
-# Heading1
+I, KaProDes, give anyone and everyone the freedom to use this Project. Free to use. Credits appreciated.
 
-```
-#### Heading4
-```
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-#### Heading4
+<!-- CONTACT -->
 
-[Note](yellow) : You can additionally add Headings via the toolbar :
+## Contact
 
-![alt text](public/img/doc_img/heading.png)
+Your Name - [@KapProDes](https://leetcode.com/KapProDes/) - deshmukhkapil4@gmail.com
 
-<hr>
-<hr>
+Project Link: [https://github.com/KaProDes/storymarker](https://github.com/KaProDes/storymarker)
 
-## [Normal Text](#normal-text)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Normal Text is extemely straightforward.
-Simply write what you wish to in the text editor.
+<!-- ACKNOWLEDGMENTS -->
 
-To add line breaks, simply leave a line in between or add [\<br>](yellow) between lines
+## Acknowledgments
 
-<hr>
+Special thanks to all my teachers and mentors. I have made this project as part of my practical learning.
 
-### [Example](red)
+-   [Colt Steele](https://github.com/Colt)
+-   [CodeDamn](https://www.youtube.com/c/codedamn)
+-   [CodeStackr](https://www.youtube.com/c/codeSTACKr)
+-   [freecodecamp](https://www.youtube.com/c/Freecodecamp)
 
-```
-This is the first Line.
-This line will follows the previous.
-
-This is the second Line.
-
-This line will be on the next line of second.
-
-This is the fourth Line. <br> This line forcefully breaks from the fourth
-```
-
-This is the first Line.
-This line will follow the previous.
-
-This is the second Line.
-
-This line will be on the next line of second.
-
-This is the fourth Line. <br> This line forcefully breaks from the fourth
-
-<hr>
-<hr>
-
-### [Colored Text](#coloredtext)
-
-You can color any text (headings, normal text, lists, etc) [in](blue) [many](red) [different](yellow) [colors](green).
-
-Here is an ever expanding list of Colors. (We keep adding more colors all the time.)
-
-| colorName | Sample Text                                |
-| --------- | ------------------------------------------ |
-| _red_     | <font color="crimson">Lorem Ipsum</font>   |
-| _green_   | <font color="green">Lorem Ipsum</font>     |
-| _blue_    | <font color="darkcyan">Lorem Ipsum</font>  |
-| _yellow_  | <font color="goldenrod">Lorem Ipsum</font> |
-| _purple_  | <font color="purple">Lorem Ipsum</font>    |
-
-<br>
-To Apply the color, follow this syntax
-
-```
-[Text that you want to display](colorName)
-```
-
-<hr>
-
-### [Example](red)
-
-```
-[This is Sample Text, red in color](red)
-```
-
-[This is Sample Text, red in color](red)
-
-```
-##### [This is a Heading5, purple in color](purple)
-```
-
-##### [This is a Heading5, purple in color](purple)
-
-<hr>
-<hr>
-
-### [Bold, Italics and Other Emphasis](#emphasis)
-
-You can emphasise text using **Bold**, _Italics_, **_Combination_** and ~~Strike Through.~~
-
-<hr>
-
-### [Examples](red)
-
-```
-Emphasis, aka italics, with *asterisks* or _underscores_.
-
-Strong emphasis, aka bold, with **asterisks** or **underscores**.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-
-```
-
-Emphasis, aka italics, with _asterisks_ or _underscores_.
-
-Strong emphasis, aka bold, with **asterisks** or **underscores**.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-
-<hr>
-<hr>
-
-### [Lists](#lists)
-
-### [Example](red)
-
-```
-1. First ordered list item
-2. Another item
-3. And another item.
-
-
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
-```
-
-1. First ordered list item
-2. Another item
-3. And another item.
-
-- Unordered list can use asterisks
-
-* Or minuses
-
-- Or pluses
-
-<hr>
-<hr>
-
-### [Links](#links)
-
-Markdown makes linking to other Websites, Articles, Pages and Media extremely simple.
-
-All you have to is follow this basic syntax:
-
-```
-[Text You want to Show](websiteYouWantToLink.com)
-```
-
-<hr>
-
-### [Example](red)
-
-```
-[Click to See a Good Boy](https://bit.ly/veryfastgoodboy)
-```
-
-[Click to See a Good Boy](https://bit.ly/veryfastgoodboy)
-
-<hr>
-<hr>
-
-### [Images](#images)
-
-Inserting Images is very similar to Links.
-
-Follow the following simple syntax:
-
-```
-![some caption text](linkToTheImage.net)
-```
-
-Additionally you can add titles of ["medium_big"](yellow) and ["big_img"](red) to get images that are [70%](yellow) and [95%](red) of the article in width, respectively.
-
-[Note : ](yellow) Images will automatically fit to accomodate screen sizes on Mobile
-
-<hr>
-
-### [Example](red)
-
-_[Standard Image Example](blue)_
-
-```
-![This is Good Boy](https://bit.ly/veryfastgoodboy)
-```
-
-![This is Good Boy](https://bit.ly/veryfastgoodboy)
-
-_[For Medium Image Example Click Here](https://ebia-wiki-dell.herokuapp.com/docs#images)_
-
-_[For Large Image Example Click Here](https://ebia-wiki-dell.herokuapp.com/docs#images)_
-
-<hr>
-<hr>
-
-# [Glossary](green)
-
-While writing an article, you always access [Markdown Basic Syntax Guide]() by clicking on the "❔"
-
-![alt text](public/img/doc_img/markdownguide.png "medium_img")
-
-#### [Additional References](purple)
-
-- ##### [![logo](public/img/doc_img/link.svg) Phenomenal Cheat-Sheet on Github by AdamP](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-- ##### [![logo](public/img/doc_img/link.svg) Markdown Guide by Matt Cone](https://www.markdownguide.org/)
-- ##### [![logo](public/img/doc_img/link.svg) Markdown's Original Website](https://daringfireball.net/projects/markdown/)
-- ##### [![logo](public/img/doc_img/link.svg) Wikipedia : Markdown](https://en.wikipedia.org/wiki/Markdown)
+<p align="right">(<a href="#top">back to top</a>)</p>

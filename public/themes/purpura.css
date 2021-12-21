@@ -1,0 +1,16 @@
+:root {
+  --mainText: #f4f4f4;
+  --secText: #fff;
+  --mainColor: #240046;
+  --secColor: #3c096c;
+  --borderColor: #5a189a;
+
+  --themeBorder: #e0aaff;
+  --bgColor: rgba(22, 100, 74, 0.8);
+  --fgShadow: #1abc9c;
+  --buttonColor: #9d4edd;
+}
+
+.navigate li a {
+  color: var(--mainText);
+}

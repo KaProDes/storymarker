@@ -1,0 +1,20 @@
+:root {
+  --mainText: #f0f0f0;
+  --secText: #f2f3f4;
+  --mainColor: #17223b;
+  --secColor: #263859;
+  --borderColor: #6b778d;
+
+  --themeBorder: #d4d9de;
+  --bgColor: rgba(235, 178, 178, 0.226);
+  --fgShadow: #ff6768;
+  --buttonColor: #ff6768;
+  --altColor: #00354e;
+}
+
+.bg p,
+.bg h3,
+#submitBtn,
+.skills ul li {
+  color: var(--altColor) !important;
+}
