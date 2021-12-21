@@ -1,0 +1,16 @@
+:root {
+  --mainText: #f0f0f0;
+  --secText: #cccccc;
+  --mainColor: #2f2f2f;
+  --secColor: #000;
+  --borderColor: #1c1c1c;
+
+  --themeBorder: #d4d9de;
+  --bgColor: rgba(26, 23, 24, 0.8);
+  --fgShadow: #5dade2;
+  --buttonColor: #3498db;
+}
+
+.skills ul li {
+  color: #005d77;
+}

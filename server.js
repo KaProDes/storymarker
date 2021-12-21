@@ -64,6 +64,7 @@ app.get("/", async (req, res) => {
     const hiddenManager = await Article.findOne({slug : 'hidden-manager'});
     res.render("articles/index.ejs", {
       articles: articles,
+      auth : req.oidc.isAuthenticated(),
       user: req.oidc.user,
       adminList: adminList,
       userList : userList,
@@ -74,6 +75,10 @@ app.get("/", async (req, res) => {
     res.redirect("/login");
   }
 });
+
+app.get("/portfolio",(req,res)=>{
+  res.render("portfolio/index.ejs")
+})
 
 app.get("/profile", requiresAuth(), async (req, res) => {
   if (req.oidc.user) {
@@ -128,6 +133,11 @@ app.get ('/docs',requiresAuth(), function (req, res) {
 
   var data = fs.readFileSync('./views/docs/docs.md', 'utf8');
   res.render ('docs/docs.ejs',{user : req.oidc.user, docBody : marked(data)});
+});
+
+//About Page Render
+app.get ('/about', function (req, res) {
+  res.render ('docs/about.ejs');
 });
 
 app.get("*", (req, res) => {

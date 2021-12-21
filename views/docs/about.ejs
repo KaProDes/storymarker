@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="../../img/favicon_sm.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> StoryMarker</title>
+  <%-include("../articles/_bootstrap.ejs") %> 
+  <link id="theme_sheet" rel="stylesheet" href="/css/light.css">
+</head>
+<body> 
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">
+        <img class="scale" src="/img/favicon_sm.ico"> StoryMarker</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+          </li>
+
+          <li class="nav-item switch_btn">
+              <a class="nav-link switch_text">Dark Mode</a>
+          </li>
+
+        </ul>
+      </div>
+  </nav>
+
+    <% let phrases = ["Framework for Frameworks", "Designed for Designers", "Create. Customise. Collaborate.", "Plan. Collaborate. Succeed.", "Plan. Prepare. Progess.", "Created for Creators","Made for Makers", "Built for Builders",] %> 
+
+    <div class="container text-center">
+      
+      <div class="jumbotron">
+            <h5>Created by :<a target="_blank" href="https://www.linkedin.com/in/kapil-d/"> Kapil Deshmukh</a></h5>
+            <h1 class="display-4"><span class="text-success">StoryMarker : </span> <%= phrases[Math.floor(Math.random()*phrases.length)] %>  </h1>
+            <h2 class="lead">Made for small teams to internally share designs, mockups and code.</h2>
+            <hr class="my-4">
+            <p><span class="text-info">StoryMaker</span> is an extremely simple, elegant and Powerful way for Software Development Teams to Collaborate on an end-to-end product. <br> 
+                Learn more by clicking here :</p>
+                <p class="lead">
+                  <a class="btn btn-primary btn-lg" href="#features">Learn More</a>
+                </p>
+            </p>
+            <h3 class="text-danger">OR</h3>
+            <p>
+              <button class="btn btn-warning btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Test out our Sandbox Project!
+              </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                To test out an actual live instance of StoryMarker, you can log in below with the following dummy credentials
+                <span class="text-danger">Admin</span>  <code style="background-color: #222;"> email : admin@storymarker.com <br> password : $Admin123</code>
+                <span class="text-info">User</span>  <code style="background-color: #222;"> email : user@storymarker.com <br> password : $User123</code>
+                <span class="text-warning">Outsider</span>  <code style="background-color: #222;"> email : outsider@storymarker.com <br> password : $Outsider123</code>
+                <br>
+                <a class="btn btn-primary" target="_blank" href="/">
+                  I'm ready to Log in!
+                </a>
+              </div>
+            </div>
+        </div>
+
+        <section id="features" class="features">
+          <div class="container aos-init aos-animate" data-aos="fade-up">
+    
+            <div class="section-title">
+              <h2>Features</h2>
+              <p>A preview of our features</p>
+            </div>
+    
+            <div class="row">
+    
+              <div style="margin-bottom: 30px;" class="col-lg-4 col-md-12 d-flex align-items-stretch">
+                <div class="member aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                  <div class="member-img">
+                    <img src="/img/users.gif" class="img-fluid" alt="">
+                  </div>
+                  <div class="member-info">
+                    <hr style="color: aquamarine !important;">
+                    <h4>Control User Priviledges</h4>
+                    <h5> <span class="text-info">Admins</span> - can edit and delete stories, <span class="text-warning">Users</span> - can comment on stories and <span class="text-danger">Outsiders</span> - cannot see anything</h5>
+                    <hr style="color: aquamarine;">
+                  </div>
+                </div>
+              </div>
+              
+              <div style="margin-bottom: 30px;" class="col-lg-4 col-md-12 d-flex align-items-stretch">
+                <div class="member aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                  <div class="member-img">
+                    <img src="/img/story.gif" class="img-fluid" alt="">
+                  </div>
+                  <div class="member-info">
+                    <hr style="color: aquamarine !important;">
+                    <h4>Create Stories</h4>
+                    <h5><span class="text-success">Stories</span> allow managers to assign tasks; team-members to share code snippets, design and ideas</h5>
+                    <hr style="color: aquamarine;">
+                  </div>
+                </div>
+              </div>
+              
+              <div style="margin-bottom: 30px;" class="col-lg-4 col-md-12 d-flex align-items-stretch">
+                <div class="member aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+                  <div class="member-img">
+                    <img src="/img/editor.gif" class="img-fluid" alt="">
+                  </div>
+                  <div class="member-info">
+                    <hr style="color: aquamarine !important;">
+                    <h4>Rich Text Editor</h4>
+                    <h5>The <span class="text-info">Rich Text Editor</span> allows you to write the story the way you intended it without getting in your way.</h5>
+                    <hr style="color: aquamarine;">
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </section>
+    </div>
+    <%- include('../articles/_theme_selector.ejs') %> 
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> KwayTree / Blog</title>
+    <title> StoryMarker | Home</title>
     <%-include("./_bootstrap.ejs") %> 
     <link id="theme_sheet" rel="stylesheet" href="/css/light.css">
 </head>
@@ -13,9 +13,9 @@
 
     <% let i = 0 %> 
     <div class="container">
-        <h1 class="mb-4">KwayTree's Blog</h1>
+        <h1 class="mb-4"> StoryMarker</h1>
         <% if(adminList.includes(user.email.toLowerCase())){ %>
-                <a href="/articles/new" class="btn btn-success">New Article</a>
+                <a href="/articles/new" class="btn btn-success">New Story</a>
                 <a href="/docs" class="btn btn-info">Writing Guide</a>
         <%  }%>
         <hr>

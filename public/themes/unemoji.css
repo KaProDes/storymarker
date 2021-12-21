@@ -1,0 +1,27 @@
+#inputText,
+#outputText {
+  color: black;
+  padding: 10px;
+}
+
+.btn {
+  margin: 20px;
+  padding: 10px 20px;
+  outline: 0;
+  border: 0;
+  background: #53d8fb;
+  border-radius: 5px;
+  border-bottom: 1px solid #064789;
+  border-left: 1px solid #064789;
+  animation: wiggle 1.5s infinite;
+}
+
+.green {
+  background-color: greenyellow;
+}
+
+.btn:hover {
+  background: #ff499e;
+  animation: scared 1s infinite;
+  cursor: pointer;
+}
