@@ -14,14 +14,6 @@
 
 
 
-let admin = [
-    // 'deshmukhkapil22@gmail.com',
-    // 'kirmavo@gmail.com',
-    // 'cassandrajames00cj@gmail.com',
-    // 'Sujith.Ravindran@Dell.com',
-    // 'sujith.ravindran@dell.com',
-    // 'kshitij.sinha1608@gmail.com',
-    // 'karan1501mannan@gmail.com'
-]
+let admin = []
 
 module.exports = admin;
